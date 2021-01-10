@@ -1,0 +1,15 @@
+<h1>Login</h1>
+<%= form_tag '/sessions' do %>
+
+  <% if notice %>
+    <strong>Could not log in:</strong><br>
+    <p> <%= notice %> </p>
+  <% end %>
+
+<%= label_tag :username, 'Username:'%><br>
+<%= text_field_tag :username, '' %><br>
+<%= label_tag :password, 'Password:'%><br>
+<%= password_field_tag :password, '' %><br>
+<%= submit_tag "Submit" %><br>
+
+<% end %>

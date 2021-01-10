@@ -1,0 +1,15 @@
+<% if current_user %>
+  <li>
+  <%= link_to "Welcome, #{current_user.first_name}!", '/' %>
+  </li>
+  <li id='LogoutLink'>
+  <%= link_to 'Logout', '/sessions', method: 'delete' %>
+  </li>
+<% else %>
+  <li>
+    <%= link_to 'Login', '/sessions/new' %>
+  </li>
+  <li>
+    <%= link_to 'Register', '/users/new' %>
+  </li>
+<% end %>

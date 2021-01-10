@@ -1,0 +1,33 @@
+<%= stylesheet_link_tag "dropzone", media: "all" %>
+<%= javascript_include_tag "dropzone" %>
+
+
+<p>
+  Upload your image to Picanthrope!
+</p>
+
+<!-- Change /upload-target to your upload address -->
+<form id="upload-form" action="/images" class="dropzone">
+</form><br>
+<button type='button' id="upload-button">
+  Upload!
+</button>
+
+<script type='text/javascript'>
+  Dropzone.options.uploadForm = {
+    init: function() {
+      var myDropzone = this;
+      var button = document.getElementById('upload-button');
+      button.addEventListener('click', function(){
+        myDropzone.processQueue();
+      });
+    },
+    paramName: "file", // The name that will be used to transfer the file
+    maxFilesize: 2, // MB
+    autoProcessQueue: false,
+    withCredentials: true,
+    uploadMultiple: true,
+    acceptedFiles: 'image/*'
+  };
+</script>
+
