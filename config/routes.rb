@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :images
   root to: 'home#index'
+  resources :images
   resources :users, only:[:create, :new]
   get '/sessions/new'
   post '/sessions', to: 'sessions#create'
