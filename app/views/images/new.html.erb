@@ -7,8 +7,10 @@
 </p>
 
 <!-- Change /upload-target to your upload address -->
-<form id="upload-form" action="/images" class="dropzone">
-</form><br>
+<%= form_with method: :post, local: true, url: "/images", html: { id: "upload-form", class: "dropzone" } do |form| %>
+
+<% end %>
+<br>
 <button type='button' id="upload-button">
   Upload!
 </button>
@@ -20,10 +22,12 @@
       var button = document.getElementById('upload-button');
       button.addEventListener('click', function(){
         myDropzone.processQueue();
+        myDropzone.options.autoProcessQueue = true;
       });
     },
     paramName: "file", // The name that will be used to transfer the file
-    maxFilesize: 2, // MB
+    maxFilesize: 10, // MB
+    parallelUploads: 5,
     autoProcessQueue: false,
     withCredentials: true,
     uploadMultiple: true,

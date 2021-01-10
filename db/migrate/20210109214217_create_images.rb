@@ -4,6 +4,7 @@ class CreateImages < ActiveRecord::Migration[6.1]
       t.string :description
       t.boolean :public, default: false, null: false 
       t.text :metadata, default: '{}', null: false
+      t.references :user, null: false 
       t.timestamps null: false
     end
   end
