@@ -5,3 +5,23 @@
   </li>
 <% end %>
 </ul>
+
+<nav aria-label="Page navigation">
+  <ul class="pagination">
+    <% if @page > 1 %>
+    <li>
+      <%= link_to "&laquo;".html_safe, "/images?page=#{(@page.pred)}" %>      
+    </li>
+    <% end %>
+    <% 1.upto(@total_pages) do |page| %>
+      <li>
+      <%= link_to "#{page}", "/images?page=#{page}" %>
+      </li>
+    <% end %>
+    <% if @page < @total_pages %>
+    <li>
+      <%= link_to "&raquo;".html_safe, "/images?page=#{(@page.next)}" %>
+    </li>
+    <% end %>
+  </ul>
+</nav>
