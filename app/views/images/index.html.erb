@@ -1,3 +1,10 @@
+<div class="image-index-button-container">  
+  <%= link_to "Back to Main", '/', :class => 'btn btn-primary' %><hr>
+  <%# if policy(@images).update? %>
+    <%#= link_to "Delete ALL the pictures in this page!", '#', :class => 'btn btn-danger' %>
+  <%# end %>
+</div>
+
 <div class="row">
   <% @images.each do |image| %>
     <div class="col-xs-12 col-sm-4 col-lg-3 col-xl-2" style="height: 350px">

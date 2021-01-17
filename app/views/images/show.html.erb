@@ -3,7 +3,13 @@
   <%= image_tag @image.file.variant(resize_to_limit: [1920, 1080]), :class => "img-responsive", :id => "image-detail" %>
   <hr class="my-4">
   <% if policy(@image).update? %>
-    <i class="fa fa-edit"></i>
-    <i class="fa fa-trash-alt"></i>
+    <div class="image-detail-btn">
+      <%= link_to "Delete picuture", '#', :class => 'btn btn-lg btn-danger' %>
+      <%= link_to "Go Back", '/images', :class => 'btn btn-lg btn-primary' %>
+    </div>
+  <% else %>
+    <div class="image-detail-btn"> 
+      <%= link_to "Go Back", '/images', :class => 'btn btn-lg btn-primary' %>
+    </div>
   <% end %>
 </div>

@@ -3,10 +3,31 @@
 @import "bootstrap";
 @import "font-awesome";
 
+#main-page-frame {
+  width: 80%;
+  margin: auto;
+  border: 1px solid black;
+  p {
+    margin: 1rem;
+  }
+}
+
+.app-landing-title {
+  padding: 2rem;
+}
+
+.image-index-button-container {
+  padding: 2rem;
+}
+
 .navbar-text.navbar-right {
   padding-right: 1rem;
 }
 
 #image-detail {
   padding: 2rem;
+}
+
+.image-detail-btn {
+  margin: 2rem;
 }

@@ -1,4 +1,12 @@
-  <% if notice %>
-    <p> <%= notice %> </p>
-  <% end %>
-Hello, world!
+<% if notice %>
+  <p> <%= notice %> </p>
+<% end %>
+<h2 class="app-landing-title">Picanthrope</h2><hr>
+<div class="jumbotron" id="main-page-frame">
+  <p>Welcome to <strong>Picanthrope!</strong> Make yourself home to upload and store your personal picture cache!</p>
+  <p>You may want to share your pictures to the world, too... or not!</p>
+  <p>Click below to start browsing!</p><br>
+  <div class="image-detail-btn"> 
+    <%= link_to 'See ALL the pictures', "/images", class: 'btn btn-lg btn-primary' %>
+  </div>
+</div>
