@@ -1,17 +1,16 @@
-<%= stylesheet_link_tag "dropzone", media: "all" %>
-<%= javascript_include_tag "dropzone" %>
+<%#= stylesheet_link_tag "dropzone", media: "all" %>
+<%#= javascript_include_tag "dropzone" %>
 
 
 <p>
   Upload your image to Picanthrope!
 </p>
 
-<!-- Change /upload-target to your upload address -->
 <%= form_with method: :post, local: true, url: "/images", html: { id: "upload-form", class: "dropzone" } do |form| %>
 
 <% end %>
 <br>
-<button type='button' id="upload-button">
+<button type='button' id="upload-button", class='btn btn-primary'>
   Upload!
 </button>
 
@@ -23,6 +22,9 @@
       button.addEventListener('click', function(){
         myDropzone.processQueue();
         myDropzone.options.autoProcessQueue = true;
+        myDropzone.on("success", function(file) {
+           window.location.href = ("/images")
+        });
       });
     },
     paramName: "file", // The name that will be used to transfer the file

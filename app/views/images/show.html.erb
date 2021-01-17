@@ -4,7 +4,7 @@
   <hr class="my-4">
   <% if policy(@image).update? %>
     <div class="image-detail-btn">
-      <%= link_to "Delete picuture", '#', :class => 'btn btn-lg btn-danger' %>
+      <%= link_to "Delete picture", image_path(@image), :method => 'delete', :data => {:confirm => 'Are you sure?'}, :class => 'btn btn-lg btn-danger' %>
       <%= link_to "Go Back", '/images', :class => 'btn btn-lg btn-primary' %>
     </div>
   <% else %>

@@ -1,6 +1,3 @@
-<% if notice %>
-  <p> <%= notice %> </p>
-<% end %>
 <h2 class="app-landing-title">Picanthrope</h2><hr>
 <div class="jumbotron" id="main-page-frame">
   <p>Welcome to <strong>Picanthrope!</strong> Make yourself home to upload and store your personal picture cache!</p>
@@ -8,5 +5,8 @@
   <p>Click below to start browsing!</p><br>
   <div class="image-detail-btn"> 
     <%= link_to 'See ALL the pictures', "/images", class: 'btn btn-lg btn-primary' %>
+    <% if current_user %>
+      <%= link_to 'Upload ALL the pictures', "/images/new", class: 'btn btn-lg btn-primary' %>
+    <% end %>
   </div>
 </div>

@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to '/'
     else
-      redirect_to '/sessions/new', notice: 'Incorrect username or password, please try again!'
+      redirect_to '/sessions/new', notice: 'Could not log in: Incorrect username or password, please try again!'
     end
 
   end

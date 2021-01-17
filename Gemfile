@@ -13,12 +13,12 @@ gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
 # Bootstrap 3 UI Framework
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'jquery-rails'
 # Font-awesome icons
 gem 'font-awesome-rails'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 5.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -31,7 +31,7 @@ gem "mini_magick"
 # Acces control configuration
 gem "pundit"
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.4', require: false
+# gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

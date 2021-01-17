@@ -15,6 +15,7 @@ class ImagesController < ApplicationController
   end
   
   def new
+    authorize Image
   end
 
   def create
@@ -23,6 +24,25 @@ class ImagesController < ApplicationController
     image_params[:file].each_pair do |i, file|
       Image.create!(file: file, user: current_user)
     end
+  end
+
+  def destroy
+    @image = Image.find params[:id]
+    authorize @image
+    @image.destroy!
+    redirect_to "/images", notice: 'Image successfully deleted!'
+  end
+
+  def destroy_many
+    # render plain: params[:image_ids].inspect
+    authorize Image
+    image_ids = params[:image_ids]
+    if image_ids.nil?
+      redirect_to "/images", notice: 'No images selected!'
+      return 
+    end
+    policy_scope(Image).destroy_by(id: image_ids)
+    redirect_to "/images", notice: 'Images successfully deleted!'
   end
 
   def show

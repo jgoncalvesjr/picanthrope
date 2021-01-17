@@ -3,12 +3,24 @@ class ImagePolicy < ApplicationPolicy
     true
   end
 
+  def new?
+    user.present?
+  end
+
   def show?
     record.public? || is_owner?
   end
 
   def update?
     is_owner?
+  end
+
+  def destroy?
+    is_owner?
+  end
+
+  def destroy_many?
+    user.present?
   end
 
   class Scope < Scope
