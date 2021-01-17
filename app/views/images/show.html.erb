@@ -1,0 +1,9 @@
+<div class="jumbotron">
+  <h2 class="display-4">Image Details</h2>
+  <%= image_tag @image.file.variant(resize_to_limit: [1920, 1080]), :class => "img-responsive", :id => "image-detail" %>
+  <hr class="my-4">
+  <% if policy(@image).update? %>
+    <i class="fa fa-edit"></i>
+    <i class="fa fa-trash-alt"></i>
+  <% end %>
+</div>

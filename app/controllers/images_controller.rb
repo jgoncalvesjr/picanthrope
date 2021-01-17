@@ -25,6 +25,11 @@ class ImagesController < ApplicationController
     end
   end
 
+  def show
+    @image = Image.find params[:id]
+    authorize @image
+  end
+
   private
 
   def image_params
