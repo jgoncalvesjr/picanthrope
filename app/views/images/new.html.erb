@@ -1,10 +1,11 @@
-<%#= stylesheet_link_tag "dropzone", media: "all" %>
-<%#= javascript_include_tag "dropzone" %>
 
 
-<p>
-  Upload your image to Picanthrope!
-</p>
+<h2>
+Upload your image to Picanthrope!
+</h2>
+<h3>
+Click on the box to browse files to upload or simply drop them in the box!
+</h3>
 
 <%= form_with method: :post, local: true, url: "/images", html: { id: "upload-form", class: "dropzone" } do |form| %>
 
