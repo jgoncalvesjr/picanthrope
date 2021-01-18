@@ -10,7 +10,7 @@
     <% @images.each do |image| %>
       <div class="col-xs-12 col-sm-4 col-lg-3 col-xl-2" style="height: 350px">
         <div class="thumbnail">
-          <%= link_to (image_tag image.file.variant(resize_to_limit: [200, 200])), "/images/#{image.id}" %>
+          <%= link_to (image_tag image.file.variant(resize_to_limit: [350, 350])), "/images/#{image.id}" %>
           <div class="caption">
             <% if image.description %>
               <p><%= image.description %></p>
